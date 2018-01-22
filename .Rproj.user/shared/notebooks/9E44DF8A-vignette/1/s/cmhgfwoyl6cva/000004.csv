@@ -1,0 +1,9 @@
+"0","library(ggmap)"
+"0","ManhattanMap <- qmap(location = ""Manhattan"", zoom = 12, color = ""bw"")"
+"2","Map from URL : http://maps.googleapis.com/maps/api/staticmap?center=Manhattan&zoom=12&size=640x640&scale=2&maptype=terrain&language=en-EN&sensor=false
+"
+"2","Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Manhattan&sensor=false
+"
+"2","`panel.margin` is deprecated. Please use `panel.spacing` property instead"
+"0","ManhattanMap + "
+"0","    geom_point(aes(x = longitude, y = latitude, color = roe, size = roe), alpha = 0.5, data = datot)"

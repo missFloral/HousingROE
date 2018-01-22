@@ -1,0 +1,4 @@
+"0","#library(HousingROE)"
+"0","ManhattanPlot <- ggplot(datot[datot$beds != ""1.5 beds"" & datot$beds != ""10 beds"", ], aes(x=beds, y=roe)) "
+"0","ManhattanPlot +"
+"0","    geom_boxplot(aes(fill=factor(walk_score)), alpha=0.5)"

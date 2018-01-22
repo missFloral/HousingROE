@@ -1,0 +1,27 @@
+"0","library(knitr)"
+"0","#library(ZillowR)"
+"0","library(dplyr)"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","#library(jsonlite)"
+"0","library(httr)"
+"0","#library(XML)"
+"0","library(stringr)"
+"0","opts_chunk$set(fig.path=""images/"","
+"0","               cache.path=""cache/"","
+"0","               cache=FALSE,"
+"0","               echo=TRUE,"
+"0","               message=FALSE,"
+"0","               warning=FALSE)  "

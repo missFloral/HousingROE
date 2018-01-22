@@ -1,0 +1,39 @@
+---
+title: "Visualize Housing Data with WalkScore"
+author: "Wenting Feng"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+Here's some examples on what we can do with the aggregated Housing Return on Equity(ROE) data with WalkScore. 
+
+## Data visualization with HousingROE
+
+In overview of ROE data divided by walk score and beds, we can make a plot as following to sow the distribution(some outliers of the beds are removed). 
+
+```{r}
+library(ggplot2)
+library(HousingROE)
+ManhattanPlot <- ggplot(datot[datot$beds != "1.5 beds" & datot$beds != "10 beds", ], aes(x=beds, y=roe)) 
+ManhattanPlot +
+    geom_boxplot(aes(fill=factor(walk_score)), alpha=0.5)
+```
+
+## Spatial Visualization through ggmap
+
+Given the `datot` dataset we just collected and cleaned for Manhattan ROE, we are able to conduct the visualization through geographical mapping as well. 
+
+```{r}
+library(ggmap)
+ManhattanMap <- qmap(location = "Manhattan", zoom = 12, color = "bw")
+ManhattanMap + 
+    geom_point(aes(x = longitude, y = latitude, color = roe, size = roe), alpha = 0.5, data = datot)
+```
+
+> "D. Kahle and H. Wickham. ggmap: Spatial Visualization with ggplot2. The R Journal,5(1), 144-161."([via](http://journal.r-project.org/archive/2013-1/kahle-wickham.pdf))
